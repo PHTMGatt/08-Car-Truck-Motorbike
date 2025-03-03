@@ -71,6 +71,8 @@ override printDetails(): void {
   console.log(`Top Speed: ${this.topSpeed}`);
   console.log(`Color: ${this.color}`);
   console.log(`Wheels: ${this.wheels.length}`);
+  console.log(`Tire 1: ${this.wheels[0].getDiameter} ${this.wheels[0].getTireBrand}`);
+  console.log(`Tire 2:${this.wheels[1].getDiameter} ${this.wheels[1].getTireBrand}`);
 }
 
   // TODO: The method should call the printDetails method of the parent class
