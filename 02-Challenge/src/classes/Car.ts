@@ -80,4 +80,4 @@ class Car extends Vehicle {
 export default Car;
 
 // Commit the changes to Git
-var mike = mike;
+console.log('Car class created');
