@@ -412,20 +412,31 @@ else {
 else if (answers.action === 'Tow') {
   let selectedTruck: Truck | undefined;
   for (let i = 0; i < this.vehicles.length; i++) {
-    if (this.vehicles[i].vin === this.selectedVehicleVin) {
+    if (this.vehicles[i].vin === this.selectedVehicleVin && this.vehicles[i] instanceof Truck) {
+      // check if the selected vehicle is a truck
       selectedTruck = this.vehicles[i] as Truck;
     }
   }
   if (selectedTruck) {
     this.findVehicleToTow(selectedTruck);
     return;
+  }else {
+    console.log('The selected vehicle is not a truck. Please select a truck to tow.');
   }
 }
 else if (answers.action === 'Wheelie') {
+ let selectedMotorbike: Motorbike | undefined;
   for (let i = 0; i < this.vehicles.length; i++) {
-    if (this.vehicles[i].vin === this.selectedVehicleVin) {
-      (this.vehicles[i] as Motorbike).wheelie();
+    if (this.vehicles[i].vin === this.selectedVehicleVin && this.vehicles[i] instanceof Motorbike) {
+      // check if the selected vehicle is a motorbike
+      selectedMotorbike = this.vehicles[i] as Motorbike;
     }
+  }
+  if (selectedMotorbike) {
+    selectedMotorbike.wheelie();
+    return;
+  }else {
+    console.log('The selected vehicle is not a truck. Please select a truck to tow.');
   }
 }
 
